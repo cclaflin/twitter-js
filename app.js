@@ -5,6 +5,11 @@ var swig = require('swig');
 
 app.use(morgan('dev'));
 
+var routes = require('./routes/');
+app.use('/', routes);
+
+app.use(express.static(__dirname + '/public'));
+
 app.get('/', function (req, res) {
   //res.send('Hello Mr. Anderson!')
   var people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
