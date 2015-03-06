@@ -14,10 +14,8 @@
 <!-- display tweets here -->
 {% for tweet in tweets %}
 
-<li>
-	{{tweet.name}}<br>
-	{{tweet.text}}
-</li>
+<li><a href="/users/{{tweet.name}}">{{tweet.name}}</a> - {{ tweet.text }}</li>
+
 {% endfor %}
 </div>
 </div>
