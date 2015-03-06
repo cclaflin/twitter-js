@@ -2,8 +2,11 @@ var express = require('express');
 var app = express();
 var morgan = require('morgan');
 var swig = require('swig');
+var bodyParser = require('body-parser');
 
 app.use(morgan('dev'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 var routes = require('./routes/');
 app.use('/', routes);
